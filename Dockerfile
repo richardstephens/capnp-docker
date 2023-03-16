@@ -20,7 +20,7 @@ RUN make install
 
 FROM alpine:3.17
 
-RUN apk add libstdc++
+RUN apk add libstdc++ zip
 
 COPY --from=build /usr/local/bin/* /usr/local/bin
 COPY --from=build /usr/local/lib/* /usr/local/lib

@@ -8,7 +8,7 @@ WORKDIR /capnproto/c++
 
 RUN autoreconf -i
 RUN ./configure
-RUN make -j4 check
+RUN make -j32 check
 RUN make install
 
 WORKDIR /
@@ -24,3 +24,5 @@ RUN apk add libstdc++
 
 COPY --from=build /usr/local/bin/* /usr/local/bin
 COPY --from=build /usr/local/lib/* /usr/local/lib
+COPY --from=build /usr/local/include/capnp /usr/local/include/capnp
+

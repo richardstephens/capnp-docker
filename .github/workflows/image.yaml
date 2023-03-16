@@ -2,7 +2,7 @@ name: build image
 
 on:
   push:
-    branches: msin
+    branches: main
 
 jobs:
   build:
